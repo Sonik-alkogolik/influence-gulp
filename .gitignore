@@ -1,0 +1,14 @@
+# Игнорировать папку dist
+dist/
+
+# Игнорировать папку node_modules
+node_modules/
+
+# Игнорировать временные файлы
+*.log
+*.tmp
+.DS_Store
+
+gulpfile.js
+package.json
+package-lock.json

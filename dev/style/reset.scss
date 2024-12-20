@@ -39,8 +39,51 @@ body {
 h1, h2, h3 {
   font-family: 'Unbounded', sans-serif;
 }
+
+main {
+  overflow: hidden;
+}
+
 .container {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto; 
   padding: 0 120px; 
 }
+@media (max-width: 1440px){
+  .container {
+    padding: 0 100px; 
+  }
+}
+@media (max-width: 1400px){
+  .container {
+    padding: 0 90px;
+  }
+}
+
+@media (max-width: 1390px){
+  .container {
+    padding: 0 80px;
+  }
+}
+@media (max-width: 1360px){
+  .container {
+    padding: 0 60px;
+  }
+}
+
+@media (max-width: 1320px){
+  .container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 1280px){
+  .container {
+    width: 96%;
+    padding: 0;
+  }
+}
+
+
+

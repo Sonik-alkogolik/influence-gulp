@@ -5,6 +5,7 @@ import gulpSass from 'gulp-sass';  // Импортируем gulp-sass
 import autoprefixer from 'gulp-autoprefixer'; 
 import postcss from 'gulp-postcss'; 
 import combineMediaQueries from 'postcss-combine-media-query';
+import sortMediaQueries from 'postcss-sort-media-queries';
 import replace from 'gulp-replace';
 import fileInclude from 'gulp-file-include';
 import concat from 'gulp-concat';
@@ -34,7 +35,7 @@ function gohtml() {
 function scssstyle() {
     return gulp.src('dev/style/style.scss') 
         .pipe(sass().on('error', sass.logError))  // Компиляция SCSS в CSS
-        .pipe(postcss([combineMediaQueries()]))  // Объединяем медиа-запросы
+        .pipe(postcss([combineMediaQueries(), sortMediaQueries()]))
         .pipe(autoprefixer())  // Добавляем префиксы
         .pipe(concat('style.css'))  // Собираем все CSS в один файл
         .pipe(gulp.dest('dist/'))
@@ -48,10 +49,10 @@ function script() {
 }
 
 // Задача для копирования изображений
-function images() {
-    return gulp.src('dev/img/**/*')  // Все файлы из dev/img
-        .pipe(gulp.dest('dist/img'));  // Копируем в dist/img
-}
+// function images() {
+//     return gulp.src('dev/img/**/*')  // Все файлы из dev/img
+//         .pipe(gulp.dest('dist/img'));  // Копируем в dist/img
+// }
 
 // Функция для запуска сервера
 function watch() {
@@ -61,8 +62,8 @@ function watch() {
 
     gulp.watch(["dev/html/**/*.html", "dev/style/**/*.scss", "dev/style/**/*.css"], gulp.series(gohtml, scssstyle));
     gulp.watch("dist/*.html").on('change', browserSyncInstance.reload);
-    gulp.watch("dev/img/**/*", gulp.series(images)); 
+    // gulp.watch("dev/img/**/*", gulp.series(images)); 
 }
 
 // Экспортируем задачу по умолчанию
-export default gulp.series(clean, gohtml, scssstyle, images, script, watch);
+export default gulp.series(clean, gohtml, scssstyle, script, watch);

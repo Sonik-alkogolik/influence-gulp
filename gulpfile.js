@@ -34,7 +34,7 @@ function gohtml() {
 // Функция для обработки SCSS файлов
 function scssstyle() {
     return gulp.src('dev/style/style.scss') 
-        .pipe(sass().on('error', sass.logError))  // Компиляция SCSS в CSS
+        .pipe(sass().on('error', sass.logError))
         .pipe(postcss([combineMediaQueries(), sortMediaQueries()]))
         .pipe(autoprefixer())  // Добавляем префиксы
         .pipe(concat('style.css'))  // Собираем все CSS в один файл
@@ -60,8 +60,9 @@ function watch() {
         server: { baseDir: "dist" }
     });
 
-    gulp.watch(["dev/html/**/*.html", "dev/style/**/*.scss", "dev/style/**/*.css"], gulp.series(gohtml, scssstyle));
+    gulp.watch(["dev/html/**/*.html", "dev/style/**/*.scss", "dev/style/**/*.css"], gulp.series(gohtml,scssstyle));
     gulp.watch("dist/*.html").on('change', browserSyncInstance.reload);
+    gulp.watch("dev/js/**/*.js", gulp.series(script)); 
     // gulp.watch("dev/img/**/*", gulp.series(images)); 
 }
 

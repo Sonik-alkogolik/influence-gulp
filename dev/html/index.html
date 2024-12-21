@@ -5,17 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Onest:wght@400;700&display=swap" rel="stylesheet">
     <title>Influence</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="index.js" defer=""></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+    <script src="main.js"></script>
 </head>
 <body>
     <main>
         <div class="container">
-          @@include('header.html')
-          @@include('we-fit.html')
-          @@include('platform-work.html')
+            @@include('header.html')
+            @@include('we-fit.html')
+            @@include('platform-work.html')
+            @@include('choose-us.html')
+            @@include('slider-bottom.html')
         </div>
+            @@include('footer.html')
       </main>
+
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log(false);
+            const mySwiper = new Swiper('.swiper-container', {
+                loop: true, 
+                slidesPerView: 1, 
+                spaceBetween: 20, 
+                navigation: { 
+                    nextEl: '.swiper-bottom-button-next',
+                    prevEl: '.swiper-bottom-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-bottom-pagination',
+                    clickable: true,
+                },
+            });
+        });
+    </script>
   </body>
   </html>
        

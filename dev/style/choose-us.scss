@@ -1,0 +1,135 @@
+.choose-wrapp {
+    position: relative;
+    margin-top: 80px;
+}
+
+.choose-title {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.choose-title h2 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 39.68px;
+    color: #1C1A25;
+}
+
+.choose-wrapper-column {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.choose-item-top {
+    margin-top: -38px;
+    position: relative;
+    width: 100%;
+    height: 416px;
+    display: flex;
+    align-items: end;
+}
+
+.choose-item-content {
+    position: absolute;
+    height: 101px;
+    bottom: 96px;
+    left: 77px;
+    color: #FDFDFD;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.choose-item-content p {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30.6px;
+    text-align: left;
+}
+
+.choose-item-content span {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25.6px;
+    text-align: left;
+    color: #FDFDFDB2;
+}
+
+.choose-item-content-link {
+    display: flex;
+}
+
+.choose-item-content-link a {
+    padding: 4px 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.4px;
+    text-align: left;
+    color: #1C1A25;
+    background-color: #FDFDFD;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.choose-bottom-wrapp {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.choose-item-bottom {
+    width: 48%;
+    height: 405px;
+    display: flex;
+}
+.choose-item-bottom-content {
+    width: 100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    background: url(img/choose-item-bottom.png);
+    background-repeat: no-repeat;
+    padding-top: 53px;
+    padding-left: 75px;
+}
+.choose-item-bottom img { 
+    max-width: 415px;
+    width: 100%;
+    height: 182px;
+    display: flex;
+    object-fit: cover;
+}
+
+.choose-item-bottom p {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30.6px;
+    color: #1C1A25;
+}
+
+.choose-item-bottom span {
+    margin-top: 8px;
+    width: 80%;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25.6px;
+    color: #1C1A25B2;
+}
+.choose-item-bottom:nth-child(2)  {
+    transform: translate(0px, -40px);
+}
+.choose-item-bottom:nth-child(2)  > .choose-item-bottom-content {
+    padding-top: 43px;
+    padding-left: 37px;
+}
+
+.choose-item-bottom:nth-child(2)  > .choose-item-bottom-content img {
+    max-width: 585px;
+    height: 233px;
+    position: absolute;
+    left: -25px;
+    top: 133px;
+}

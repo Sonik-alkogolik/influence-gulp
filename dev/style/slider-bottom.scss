@@ -107,3 +107,22 @@
     cursor: pointer;
     z-index: 20;
 }
+
+.swiper-bottom-pagination {
+    position: absolute;
+    width: 20% !important;
+    height:9px;
+    margin: 0 auto;
+    top: auto!important;
+    left: 48%!important;
+    bottom: 23px!important;
+    border-radius: 99px;
+}
+.swiper-bottom-pagination .swiper-pagination-bullet-active {
+    width: 15px;
+    border-radius: 99px;
+    background-color: #FDFDFD;
+}
+.swiper-bottom-pagination .swiper-pagination-bullet {
+    background-color: #FDFDFD;
+}

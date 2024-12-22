@@ -159,6 +159,7 @@ header button {
   line-height: 20.4px;
   color: #FDFDFD;
   background-color: #1C1A25;
+  z-index: 9;
 }
 
 .spiral-mob {
@@ -168,7 +169,58 @@ header button {
 .burger {
   display: none;
 }
+.menu-mob {
+  display: none;
+}
+.menu-mob.active {
+    width: 100%;
+    display: flex; 
+    position:fixed;
+    margin: 0;
+    top: 20%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 16px 0px #00000012;
+    z-index: 40;
+}
+.menu-mob.active ul {
+    padding: 30px 30px;
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+.menu-mob.active ul li:nth-last-child(1) {
+  padding-bottom: 0px;
+}
+.menu-mob.active ul {
+  max-width: 100%;
+}
 
+.menu-mob.active ul li {
+  padding-bottom: 20px; 
+  width: 100%;
+  position: relative;
+}
+.menu-mob.active ul li::after {
+  content:"";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background:url(img/arrow-mob-menu.png);
+  background-repeat:no-repeat;
+}
+.menu-mob.active ul li a{
+  display: block;
+  width: 100%;
+}
 
 @media(max-width:1350px) {
 
@@ -383,6 +435,11 @@ header button {
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
+  .menu-mob.active {
+    max-width: 95%;
+  }
+
+
 }
 
 
@@ -484,13 +541,19 @@ header button {
   }
 
   .hero-title-block h1 {
-    padding: 0 20px;
+    padding: 0px 25px;
+    line-height: 46px;
+    margin-bottom: 0;
   }
 
   .hero-block>.hero-title-block>p {
     padding: 0 20px;
   }
- 
+  .menu-mob.active {
+    max-width: 94%;
+    top: 18%;
+  }
+
 }
 
 
@@ -504,9 +567,19 @@ header button {
   .hero-block > .hero-title-block > span br {
     display: none;
   }
+  .menu-mob.active {
+    max-width: 94%;
+    top: 16.5%;
+}
 }
 
-@media(max-width:365px) {
+@media(max-width:390px){
+  .hero-block > .hero-title-block > span br {
+    display: block;
+  }
+}
+
+@media(max-width:374px) {
   .hero-title-block p {
     width: 100%;
   }
@@ -542,6 +615,7 @@ header button {
   .hero-block {
     height: 790px;
   }
+ 
 }
 
 @media(max-width:350px) {

@@ -41,7 +41,7 @@
     background-color: #FFFFFF;
     font-size: 12px;
     font-weight: 500;
-    line-height: 15.3px;
+    line-height: 14px;
     width: 26px;
     height: 26px;
     display:flex;
@@ -155,7 +155,7 @@
     .platform-row-item {
         max-width: 100%;
         width: 100%;
-        margin-bottom: 16px;
+        margin-bottom: 19px;
         height: auto;
     }
     .platform-row-item img {
@@ -172,6 +172,25 @@
 @media(max-width:640px){
     .platform-row-item img {
         max-width: 90%;
+    }
+    .platform-bottom-block {
+        margin-top: 0px;
+        height:152px;
+        border-radius: 24px;
+        background: url(img/bg_bottom_platform-mob.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .platform-bottom-block-content {
+        max-width: 195px;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 24px;
+    }
+    .platform-bottom-block-content p {
+        text-align: center;
     }
 }
 @media(max-width:480px){

@@ -21,8 +21,15 @@
         </div>
             @@include('footer.html')
       </main>
-
-
+      <div class="form-container">
+        <button class="close-button"><img src="img/coluse-form.png" alt=""></button>
+        <h2>Join the future of music promotion!<br>Get access first.</h2>
+        <form class="signup-form">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Get early access</button>
+        </form>
+      </div>
+      <div class="overlay"></div>
       <script>
         document.addEventListener('DOMContentLoaded', function () {
             const mySwiper = new Swiper('.swiper-container', {
@@ -39,6 +46,53 @@
                 },
             });
         });
+        document.addEventListener("DOMContentLoaded", function() {
+        const burgerButton = document.querySelector('.burger');
+        const menuMob = document.querySelector('.menu-mob');
+        burgerButton.addEventListener('click', function() {
+            const currentBackground = window.getComputedStyle(burgerButton).backgroundImage;
+            if (currentBackground.includes('burger.png')) {
+                burgerButton.style.backgroundImage = 'url(/img/burger_clouse.png)';
+            } else {
+                burgerButton.style.backgroundImage = 'url(/img/burger.png)';
+            }
+            menuMob.classList.toggle('active');
+        });
+
+            // Получаем все кнопки "Get early access"
+            const getAccessButtons = document.querySelectorAll('.get-access-btn');
+            // Получаем форму и затемнённый фон
+            const formContainer = document.querySelector('.form-container');
+            const overlay = document.querySelector('.overlay');
+            // Получаем кнопку закрытия
+            const closeButton = document.querySelector('.close-button');
+
+            // Функция для открытия формы
+            function openForm() {
+            formContainer.style.display = 'block'; // Показываем форму
+            overlay.style.display = 'block'; // Показываем затемнённый фон
+            }
+
+            // Функция для закрытия формы
+            function closeForm() {
+            formContainer.style.display = 'none'; // Скрываем форму
+            overlay.style.display = 'none'; // Скрываем затемнённый фон
+            }
+
+            // Добавляем обработчик событий на кнопки "Get early access"
+            getAccessButtons.forEach(button => {
+            button.addEventListener('click', openForm);
+            });
+
+            // Добавляем обработчик на кнопку закрытия
+            closeButton.addEventListener('click', closeForm);
+
+            // Добавляем обработчик на затемнённый фон, чтобы при клике закрывать форму
+            overlay.addEventListener('click', closeForm);
+
+
+    });
+    
     </script>
   </body>
   </html>
